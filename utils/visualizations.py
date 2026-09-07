@@ -30,6 +30,8 @@ def plot_decision_boundary(model, features, target, step_size=0.02, show_probabi
     y_min, y_max = features_arr[:, 1].min() - 0.5, features_arr[:, 1].max() + 0.5
     xx, yy = np.meshgrid(np.arange(x_min, x_max, step_size), 
                          np.arange(y_min, y_max, step_size))
+
+    # print(xx,yy)
     
     # 3. Create the flat grid coordinates for prediction
     grid_points = np.c_[xx.ravel(), yy.ravel()]
@@ -48,7 +50,7 @@ def plot_decision_boundary(model, features, target, step_size=0.02, show_probabi
         Z = (predictions > 0.5).astype(int).reshape(xx.shape)
         
     # 6. Generate the Plot background
-    plt.figure(figsize=(8, 6))
+    # plt.figure(figsize=(8, 6))
     
     if show_probabilities:
         contour = plt.contourf(xx, yy, Z, levels=20, cmap=plt.cm.plasma, alpha=0.4)
@@ -65,4 +67,5 @@ def plot_decision_boundary(model, features, target, step_size=0.02, show_probabi
     plt.ylabel(feature_names[1])
     plt.xlim(xx.min(), xx.max())
     plt.ylim(yy.min(), yy.max())
-    plt.show()
+    # plt.show()
+    
