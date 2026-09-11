@@ -69,3 +69,22 @@ def plot_decision_boundary(model, features, target, step_size=0.02, show_probabi
     plt.ylim(yy.min(), yy.max())
     # plt.show()
     
+
+
+def plot_random_image_classification(model, images, labels, num_images=10):
+    i = random.randint(0, len(images) - 1)
+
+    target_image = images[i]
+    target_label = labels[i]
+
+    pred = model.predict(target_image.reshape(1, 28, 28))
+    pred_label = np.argmax(pred)
+
+    plt.imshow(target_image, cmap='gray')
+
+    if pred_label == target_label:
+        plt.title('Correct Prediction', color='green')
+    else:
+        plt.title('Wrong Prediction', color='red')
+
+    plt.xlabel(f"Predicted Label: {pred_label} - {(pred[0][pred_label])*100:.2f}")
