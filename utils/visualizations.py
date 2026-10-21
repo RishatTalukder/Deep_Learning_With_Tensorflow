@@ -88,3 +88,9 @@ def plot_random_image_classification(model, images, labels, num_images=10):
         plt.title('Wrong Prediction', color='red')
 
     plt.xlabel(f"Predicted Label: {pred_label} - {(pred[0][pred_label])*100:.2f}")
+
+def load_and_resize(filepath, image_shape=(224, 224)):
+    image = tf.io.read_file(filepath)
+    image = tf.image.decode_jpeg(image, channels=3)
+    image = tf.image.resize(image, image_shape)
+    return image
