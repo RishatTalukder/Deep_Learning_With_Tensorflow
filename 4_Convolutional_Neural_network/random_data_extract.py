@@ -19,7 +19,7 @@ def copy_random_categories(source, target, num_classes=10):
         return
 
     # 2. Randomly select 10 categories
-    random.seed(42)
+    random.seed(42) # change the seed to get your own random set
     selected_categories = random.sample(all_categories, num_classes)
     print(f"Successfully selected {num_classes} random classes:")
     for cat in selected_categories:

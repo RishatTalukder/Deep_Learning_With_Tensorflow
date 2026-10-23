@@ -4,6 +4,7 @@
 *.keras
 4_Convolutional_Neural_network/resource/cheese_cake_pizza
 ptxas
-4_Convolutional_Neural_network/1_CNN_files
-4_Convolutional_Neural_network/1_CNN.md
-4_Convolutional_Neural_network/10_food_classes
+1_CNN_files
+1_CNN.md
+10_food_classes
+10FoodClasses
